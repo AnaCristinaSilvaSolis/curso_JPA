@@ -1,4 +1,4 @@
-package com.codecolective.JPA_Relations.entities.unidireccionales.OneToOne;
+package com.codecolective.JPA_Relations.clases.unidireccionales.OneToOne.entities;
 
 import jakarta.persistence.*;
 import lombok.*;
@@ -16,6 +16,12 @@ public class Pasaporte {
     private Long id_passport;
     private String numero;
 
+    @OneToOne //define el tipo de relación 1:1
+    @JoinColumn (name = "dueño_pasaporte")
+    private Ciudadano ciudadano; //PK cedula es de Ciudadano y es la FK Pasaporte
+
     @OneToOne
-    private Ciudadano ciudadano;
+    @JoinColumn (name = "auto_del_dueño")
+    private Automovil automovil; //PK id_auto es de Automóvil y es la FK de Pasaporte
+
 }
