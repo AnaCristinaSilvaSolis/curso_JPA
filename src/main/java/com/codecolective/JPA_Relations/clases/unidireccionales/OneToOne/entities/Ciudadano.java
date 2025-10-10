@@ -1,10 +1,10 @@
 package com.codecolective.JPA_Relations.clases.unidireccionales.OneToOne.entities;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
+
+import java.math.BigDecimal;
+import java.time.LocalDate;
 
 @Entity
 @Table (name = "People")
@@ -20,4 +20,10 @@ public class Ciudadano {
 
     @Column (name = "edad")
     private int age;
+
+    @Column (name = "fecha_de_creacion")
+    private LocalDate creationDate;
+
+    @Column (name = "salario")
+    private BigDecimal salary;
 }
